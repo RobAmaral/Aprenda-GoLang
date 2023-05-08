@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Programação em GoLang</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }  
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }   
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333333;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.5;
+            text-align: justify;
+            margin: 0 30px;
+        }
+        section {
+            background-color: #ffffff;
+            padding: 50px;
+            margin: 0 30px;
+            margin-bottom: 30px;
+            box-shadow: 0px 0px 5px #aaaaaa;
+        }
+        h2 {
+            font-size: 24px;
+            color: #333333;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+        }
+        li {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        code {
+            font-family: Consolas, monospace;
+            font-size: 15px;
+            color: #333333;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 0;
+}
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+nav li {
+	margin: 0 10px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+    padding: 0 30px;
+}
+
+nav a:hover {
+	color: #ddd;
+}
+
+main {
+	margin-top: 40px;
+}
+
+    </style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="moduloII.html">Módulo II</a></li>
+				<li><a href="moduloIII.html">Módulo III</a></li>
+			</ul>
+		</nav>
+	</header>
+	<h1>Programação em GoLang</h1>
+	<h2 style="text-align: center;">Aprenda a programar em GoLang com este guia completo.</h2>
+
+	<section>
+		<h2>Histórico</h2>
+		<p>O Go é uma linguagem de programação criada pelo Google em 2007 por Robert Griesemer, Rob Pike e Ken Thompson. A ideia por trás do Go era criar uma linguagem moderna, eficiente e fácil de aprender, que fosse adequada para a programação em sistemas distribuídos e em largaescala.</p>
+        <p>O Go foi lançado oficialmente em 2009 e teve sua primeira versão estável em 2012, e desde então tem se tornado cada vez mais popular na comunidade de desenvolvimento de software.</p>
+    </section>
+    <section>
+        <h2>Características</h2>
+        <ul>
+            <li>Compilação rápida</li>
+            <li>Tipagem estática</li>
+            <li>Concorrência</li>
+            <li>Gerenciamento de memória automático</li>
+            <li>Simplicidade e clareza</li>
+            <li>Suporte para programação orientada a objetos</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Instalação</h2>
+        <p>Para instalar o Go em seu computador, siga os seguintes passos:</p>
+        <ol>
+            <li>Faça o download do instalador do Go em <code>https://golang.org/dl/</code></li>
+            <li>Execute o instalador e siga as instruções</li>
+            <li>Configure as variáveis de ambiente</li>
+            <li>Verifique se a instalação foi bem-sucedida executando o comando <code>go version</code> no terminal</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Estruturas de controle</h2>
+        <p>Go suporta as estruturas de controle básicas, como <code>if</code>, <code>for</code>, <code>switch</code>, e <code>select</code>.</p>
+        <pre><code>// Exemplo de uso do if
+
+if x > 0 {
+    fmt.Println("x é positivo")
+} 
+else if x == 0 {
+    fmt.Println("x é zero")
+} 
+else {
+    fmt.Println("x é negativo")
+}
+
+// Exemplo de uso do for
+
+for i := 0; i < 10; i++ {
+    fmt.Println(i)
+    if x > 0 {
+        fmt.Println("x é positivo")
+    } 
+    else if x == 0 {
+        fmt.Println("x é zero")
+    } 
+    else {
+        fmt.Println("x é negativo")
+    }
+}
+   
+// Exemplo de uso do switch
+switch diaDaSemana {
+    case 1:
+        fmt.Println("Domingo")
+    case 2:
+        fmt.Println("Segunda-feira")
+    case 3:
+        fmt.Println("Terça-feira")
+    case 4:
+        fmt.Println("Quarta-feira")
+    case 5:
+        fmt.Println("Quinta-feira")
+    case 6:
+        fmt.Println("Sexta-feira")
+    case 7:
+        fmt.Println("Sábado")
+    default:
+        fmt.Println("Dia da semana inválido")
+}</code></pre>
+    </section>
+    <section>
+        <h2>Variáveis</h2>
+        <p>Em Go, as variáveis são declaradas usando a palavra-chave <code>var</code> e o tipo da variável é especificado após o nome da variável.</p>
+        <pre><code>// Exemplo de declaração de variável
+var x int
+var y float64
+var z string
+
+// Exemplo de atribuição de valor a uma variável
+x = 10
+y = 3.14
+z = "Hello, world!"
+
+// Exemplo de declaração e atribuição de valor a uma variável
+var a int = 5
+var b float64 = 2.5
+var c string = "Olá, mundo!"</code></pre>
+    </section>
+    <section>
+        <h2>Operadores</h2>
+        <p>Go suporta os operadores aritméticos básicos, como <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, e <code>%</code>, além de operadores de comparação, como <code>==</code>, <code>!=</code>, <code><</code>, <code>></code>, <code><=</code>, e <code>>=</code>.</p>
+        <pre><code>// Exemplo de uso de operadores aritméticos
+var a int = 5
+var b int = 2
+
+var soma int = a + b
+var subtracao int = a - b
+var multiplicacao int = a * b
+var divisao float64 = float64(a) / float64(b)
+var resto int = a % b
+
+// Exemplo de uso de operadores de comparação
+var x int = 10
+var y int = 5
+
+var igual bool = x == y
+var diferente bool = x != y
+var maior bool = x > y
+var menor bool = x < y
+var maiorOuIgual bool = x >= y
+var menorOuIgual bool = x <= y</code></pre>
+    </section>
+    <section>
+        <h2>Tipos de dados</h2>
+        <p>Go possui diversos tipos de dados básicos, como inteiros, números de ponto flutuante, strings, booleanos, além de tipos compostos, como arrays, slices, maps, e structs.</p>
+        <pre><code>// Exemplo de declaração de um array
+var numeros [5]int
+
+numeros[0] = 1
+numeros[1] = 2
+numeros[2] = 3
+numeros[3] = 4
+numeros[4] = 5
+
+// Exemplo de declaração de um slice
+var nomes []string
+
+nomes = append(nomes, "João")
+nomes = append(nomes, "Maria")
+nomes = append(nomes, "José")
+
+// Exemplo de declaração de um map
+var idades map[string]int
+
+idades = make(map[string]int)
+
+idades["João"] = 20
+idades["Maria"] = 25
+idades["José"] = 30
+
+// Exemplo de declaração de um struct
+type Pessoa struct {
+    nome string
+    idade int
+}
+
+var pessoa1 Pessoa
+
+pessoa1.nome = "João"
+pessoa1.idade = 20</code></pre>
+    </section>
+    <section>
+        <h2>Funções</h2>
+        <p>Em Go, as funções são declaradas usando a palavra-chave <code>func</code>, seguida do nome da função, dos parâmetros entre parênteses, e do tipo de retorno, caso haja.</p>
+        <pre><code>// Exemplo de declaração de uma função que soma dois números inteiros
+func soma(a int, b int) int {
+    return a + b
+}
+
+// Exemplo de chamada de função
+resultado := soma(5, 10)</code></pre>
+    </section>
+    <section>
+        <h2>Arrays</h2>
+        <p>Em Go, um array é uma sequência fixa de elementos do mesmo tipo. O tamanho do array é especificado na declaração.</p>
+        <pre><code>// Exemplo de declaração de um array
+var numeros [5]int
+
+numeros[0] = 1
+numeros[1] = 2
+numeros[2] = 3
+numeros[3] = 4
+numeros[4] = 5
+
+// Exemplo de iteração sobre um array
+for i := 0; i < len(numeros); i++ {
+    fmt.Println(numeros[i])
+}</code></pre>
+    </section>
+    <section>
+        <h2>Exemplos básicos de programação</h2>
+        <p>A seguir, alguns exemplos básicos de programação em Go:</p>
+        <pre><code>// Exemplo de programa que imprime a sequência de Fibonacci
+func fibonacci(n int) []int {
+    var resultado []int
+    a := 0
+    b := 1
+
+    for i := 0; i &lt; n; i++ {
+        resultado = append(resultado, a)
+        temp := a
+        a = b
+        b = temp + b
+    }
+    return resultado
+}
+
+fmt.Println(fibonacci(10))
+
+// Exemplo de programa que calcula o fatorial de um número
+
+func fatorial(n int) int {
+    if n == 0 {
+        return 1
+    } 
+    else {
+        return n * fatorial(n-1)
+    }
+}
+
+fmt.Println(fatorial(5))
+
+// Exemplo de programa que verifica se um número é primo
+
+func primo(n int) bool {
+    if n < 2 {
+        return false
+    }
+    for i := 2; i &lt;= int(math.Sqrt(float64(n))); i++ {
+        if n%i == 0 {
+            return false
+        }
+    }
+    return true
+}
+
+fmt.Println(primo(7))</code></pre>
+        </section>
+        
+    </body>
+</html>
