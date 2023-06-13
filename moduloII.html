@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Módulo II - Ponteiros, Struct e Arquivos em GoLang</title>
+	<link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }  
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }   
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333333;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.5;
+            text-align: justify;
+            margin: 0 30px;
+        }
+        section {
+            background-color: #ffffff;
+            padding: 50px;
+            margin: 0 30px;
+            margin-bottom: 30px;
+            box-shadow: 0px 0px 5px #aaaaaa;
+        }
+        h2 {
+            font-size: 24px;
+            color: #333333;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 30px;
+        }
+        li {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        code {
+            font-family: Consolas, monospace;
+            font-size: 15px;
+            color: #333333;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 0;
+}
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+nav li {
+	margin: 0 10px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+    padding: 0 30px;
+}
+
+nav a:hover {
+	color: #ddd;
+}
+
+main {
+	margin-top: 40px;
+}
+
+    </style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="moduloI.html">Módulo I</a></li>
+				<li><a href="moduloIII.html">Módulo III</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Ponteiros, Struct e Arquivos em GoLang</h1>
+        
+		<section>
+            <p style="text-align: justify;">
+                Neste módulo, vamos explorar alguns conceitos avançados em GoLang, incluindo ponteiros, struct e manipulação de arquivos. Esses conceitos são amplamente utilizados na programação GoLang e podem ajudar a criar programas mais eficientes e organizados.
+
+            </p>
+            <h2 style="padding-top: 20px;">Ponteiros</h2>
+            <p>
+                Em GoLang, um ponteiro é uma variável especial que armazena o endereço de memória de outra variável. Isso permite acessar e modificar o valor da variável original de forma eficiente. Vamos ver um exemplo de uso de ponteiros em GoLang:
+            </p>
+		<pre><code>
+package main
+
+import "fmt"
+
+func main() {
+	var x int = 10
+	var ptr *int
+
+	ptr = &x
+	fmt.Println("Valor de x:", x)
+	fmt.Println("Endereço de x:", &x)
+	fmt.Println("Valor do ponteiro ptr:", ptr)
+	fmt.Println("Valor apontado por ptr:", *ptr)
+
+	*ptr = 20
+	fmt.Println("Novo valor de x:", x)
+}
+		</code></pre>
+		<p>
+			Neste exemplo, declaramos uma variável "x" do tipo int e um ponteiro "ptr" do tipo *int. A seguir, atribuímos o endereço de memória de "x" ao ponteiro "ptr" utilizando o operador "&". Podemos acessar o valor apontado pelo ponteiro utilizando o operador "*", como mostrado no exemplo. Ao atribuir um novo valor ao valor apontado por "ptr", o valor de "x" também é modificado.
+		</p>
+    </section>
+		<section>
+            <h2>Struct</h2>
+            <p>
+                Struct é um tipo de dados em GoLang que permite agrupar diferentes tipos de variáveis em uma única unidade. É semelhante a uma estrutura em outras linguagens de programação. Vejamos um exemplo de uso de struct em GoLang:
+            </p>
+            <pre><code>
+            package main
+            
+            import "fmt"
+            
+            type Pessoa struct {
+                Nome  string
+                Idade int
+            }
+            
+            func main() {
+                p := Pessoa{"João", 25}
+                fmt.Println("Nome:", p.Nome)
+                fmt.Println("Idade:", p.Idade)
+            }
+            </code></pre>
+            <p>
+                Neste exemplo, definimos uma struct chamada "Pessoa" com dois campos: "Nome" do tipo string e "Idade" do tipo int. Em seguida, criamos uma variável "p" do tipo "Pessoa" e inicializamos seus campos com valores. Podemos acessar os campos da struct utilizando a notação de ponto, como mostrado no exemplo.
+            </p>
+        </section>
+        <section>
+            <h2>Manipulação de Arquivos</h2>
+            <p>
+                GoLang oferece suporte nativo para a manipulação de arquivos. Podemos abrir, ler, escrever e fechar arquivos de forma simples e eficiente. Vamos ver um exemplo de como ler o conteúdo de um arquivo em GoLang:
+            </p>
+            <pre><code>
+            package main
+            
+            import (
+                "fmt"
+                "io/ioutil"
+            )
+            
+            func main() {
+                content, err := ioutil.ReadFile("arquivo.txt")
+                if err != nil {
+            fmt.Println("Erro ao ler o arquivo:", err)
+            return
+                }
+                fmt.Println("Conteúdo do arquivo:", string(content))
+            }
+            </code></pre>
+            <p>
+                Neste exemplo, utilizamos a função "ReadFile" do pacote "io/ioutil" para ler o conteúdo de um arquivo chamado "arquivo.txt". Se houver algum erro ao ler o arquivo, exibimos uma mensagem de erro. Caso contrário, exibimos o conteúdo do arquivo convertendo-o para string.
+            </p>
+        </section>
+	</main>
+</body>
+</html>
